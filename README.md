@@ -20,5 +20,5 @@ We were able to recommend Lauderdale By The Sea as a viable target market for ou
 Our clients should be able to conduct their property search in the Lauderdale By The Sea market with confidence as they are armed with a wealth of analysis and tools designed to help them in their decision making process. If they wanted to explore alternative markets they could apply our methodology to a similar market without much difficulty. If they decide they like Lauderdale By the Sea, the market would support their investment in a two-bedroom condominium or house while satisfying their initial criteria. 
 
 ## References:
-[Forbes article](forbes 2020 the-airbnb-effect-on-housing-and-rent)
+[forbes 2020 the-airbnb-effect-on-housing-and-rent](https://www.forbes.com/sites/garybarker/2020/02/21/the-airbnb-effect-on-housing-and-rent/?sh=70acbbbc2226)
 [insideairbnb.com](insideairbnb.com/get-the-data/)
