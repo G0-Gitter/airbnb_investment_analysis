@@ -1,0 +1,165 @@
+all_excel_documentation_airbnb_project
+
+1- downloaded sept 2023 broward county listing data set from inside airbnb as a CSV
+2- copied the CSV
+3- saved a new copy as a XLSX titled "listings_9_23_Broward_Cty_Wip"
+4- began work in listings_9_23_Broward_Cty_Wip
+5- created new sheet called 'data_dictionary'
+6- pasted terms from data dictionary in inside airbnb website into 'data_dictionary' sheet
+7- copied "listings" sheet and named it "listins_copy"
+8- began work in "listings" sheet.
+9- selected entire sheet and adjusted row height and column width.
+10- created new sheet called "listings_calculations"
+11- applied a filter to all column headers A:BW in "listings" sheet
+12- filtered by column AC "neighbourhood_cleansed" for "Lauderdale By The Sea"
+13- Copied and pasted filtered result into new sheet called "lauderdale_by_the_sea"
+14- selected entire sheet and adjusted column width and row heights
+15- in "listings" sheet, filtered "property_type" by "Entire condo"
+16- in "listings" sheet, filtered "bedrooms" by "2"
+17- copied "listings" sheet to create new sheet called "listings_select_columns"
+18- deleted all but the following columns in "listings_select_columns":
+id	description	neighborhood_overview	neighbourhood	neighbourhood_cleansed	neighbourhood_group_cleansed	latitude	longitude	property_type	room_type	accommodates	bathrooms	bathrooms_text	bedrooms	beds	amenities	price	availability_30	availability_60	availability_90	availability_365
+19- created new sheet called "lauderdale_bts_2br_condos"
+20- copied values from "listings_select_columns" and pasted in "lauderdale_bts_2br_condos"
+21- in "listings_calculations", I created two tables. one "calculated" and one "entered manually" for backup. The two columns in these tables are "2br_Condo_lauderdale _by _sea" and "2br_house_lauderdale_by_sea". Rows are "median_price", "mean_price", "min_price" and "max_price"
+22- entered =MEDIAN(lauderdale_bts_2br_condos!Q2:Q19) in "listings_calculations" sheet B5.
+23- entered =AVERAGE(lauderdale_bts_2br_condos!Q2:Q19) in "listings_calculations" sheet B6.
+24- felt foolish because I realized the values I was calculating off of a copied and pasted range from a filtered table were giving me the same numbers calculated from the filtered table itself. There was no need for those extra steps.
+25- finished how I started in spite of my foolishness. 
+26- entered =MIN(lauderdale_bts_2br_condos!Q2:Q19) in B7 of "listings_calculations"
+27- entered =MAX(lauderdale_bts_2br_condos!Q2:Q19) in B8 of "listings_calculations"
+28- tried to repeat the calculations for 2 br houses with a filtered table but saw a discrepancy in the averages I was getting from my formula and the one listed when selecting the row of price data. 
+29- created new sheet called "lauderdale_bts_2br_entire_home"
+30- filtered "listings_select_columnns" to remove "entire condo" and include "entire home"
+31- copied filtered table from "listings_select_columns" and pasted into "lauderdale_bts_2br_entire_home"
+32- repeated calculations in "listings_calculations" for median price, mean price, min price, max price, number of listings referencing " "lauderdale_bts_2br_entire_home"
+33- sent my findings to my group re: sept 2023 dataset.
+34- decided to try again to see if I can do it quicker and better with pivot table and data set from different month.
+___________________________________________________________________________________________
+35- downloaded June 2023 Broward County listings data set and saved it as "listings_6_23" csv. 
+36- Saved a copy of "listings_6_23" as "listings_6_23_Broward_Cty_Wip" xlsx
+37- began working in "listings_6_23_Broward_Cty_Wip"
+38- saved a copy of "listings" sheet as "listings_6_23 _copy"
+39- renamed "listings" sheet as "listings_6_23_select_columns"
+40- deleted all columns from "listings_6_23_select_columns" except: 
+id	name	description	neighborhood_overview	neighbourhood	neighbourhood_cleansed	neighbourhood_group_cleansed	latitude	longitude	property_type	room_type	accommodates	bathrooms	bathrooms_text	bedrooms	beds	amenities	price	availability_30	availability_60	availability_90	availability_365
+41- created new sheet called "calculations"
+42- in "listings_6_23_select_columns", selected full range of remaining columns and cells and named it 'table' in the name box
+43- in 'calculations' sheet, selected within the range, hit insert from the ribbom menu, and pivot table
+44- in the table/range field I entered "table"
+45- the pivot table fields list appeared with the desired column headers available so I assumed it worked. 
+46- dragged "neighbourhood_cleansed" to the "rows"area
+47- dragged "bedrooms" to the rows area
+48- dragged "property_type" to the columns area
+49- dragged "price" to the values area
+50- changed "sum of price" to "average of price"
+51- added a slicer to toggle by "neighbourhood_cleansed".
+51- selected only "Lauderdale By The Sea" in the slicer.
+52- added a slicer to toggle by "bedrooms"
+53- selected only "2" in the slicer
+54- added a slicer to toggle by "property_type"
+55- selected "Entire condo" and "Entire home"
+56- noted average price for entire condo and entire home and copied and pasted them into a new table in the same sheet for record keeping. 
+57- changed "Average of price" to "Min of price" and "Max of price" by changing the values in the value field settings. 
+58- noted min price and max price for entire condo and entire home and copied and pasted them into the record keeping table in the same sheet. 
+59- filtered "listings_6_23_select_columns" sheet by bedrooms (2), neighbourhood_cleansed (Lauderdale By The Sea), property_type (Entire house)
+60- copied resulting table into new sheet "Sheet3"
+61- used Sheet3 to calculate median price and number of listings for homes
+62- entered calculations in table in "calculations sheet"
+63- filtered "listings_6_23_select_columns" sheet by bedrooms (2), neighbourhood_cleansed (Lauderdale By The Sea), property_type (Entire condo)
+64- copied resulting table and pasted into new sheet "Sheet4"
+65- renamed Sheet3 "Entire_condo"
+66- renamed Sheet4 "Entire_home"
+67- used "Entire_home" sheet to calculate median price and number of listings for homes.
+68- entered values in table in "calculations" sheet.
+___________________________________________________
+69- downloaded March 2023 Broward County dataset as a CSV and named it "listings_3_23"
+70- copied the CSV as "listings_3_23-Copy"
+71- saved a copy of "listings_3_23" as "listings_3_23_Broward_Cty_Wip"
+72- began working in "listings_3_23_Broward_Cty_Wip"
+73- repeated steps #38-68 with naming specific to "3_23" instead of 6_23"
+74- Used COUNTA instead of COUNT in calculating number of listings as these IDs are alphanumeric.
+______________________________________________________
+75- December dataset has no values in "bedrooms" field. Makes it hard/impossible to use for meaningful analysis that's comparable to work so far on price calculations for 2 bedrooms condos and bedrooms.
+___________________________________________________
+76- resumed work in "listings_9_23_Broward_Cty_Wip" for summaries between workbooks and visualizations.
+77- pasted tables of summary calculations from March and June into "listings_calculations" sheet.   
+78- made two new tables: one for condos and one for homes. Both display median price, average price, minimum price, maximum price by month along with a summarizing calculation for the whole period.
+79- decided average price of the two property types over time was the most important story to tell. made a separate table with just those data included. built a line chart with markers to demonstrate the trend to the audience.
+80- using my teammate's calculations about occupancy, created a new table demonstrating projected annual revenue of the two property types my multiplying avg nightly rate times occupancy rate times total days available to rent.
+
+_____________________________________________________
+
+81- began working in Rachalle's workbook "occupancyratemarchjuneseptember"
+82- Got the work to a place that mirrors what I had done for price by our POC pitch (line with markers chart with avg occupancy for each month for both 2 br condos and 2 br homes).
+83- I have a question regarding Rachalle's June occupancy calculation. Did she filter to two bedrooms?
+84- found new overall annual average ocupancy % to be 36% for homes and 58% for condos. 
+85- ran the formula for projected revenue with new occupancy %. makes it a lot closer and increases revenue for both but condos are still ahead at $31,375.68 with homes trailing at $31,086.72
+____________________________________________________________________________________
+
+86- worked in "listings_9_23_Broward_Cty_Wip" to redo seasonal price calcs using median instead of mean. Found that using median instead of average changes our calculations considerably. In conjunction with Rachalle's more robust seasonal occupancy numbers it flips the recommendation toward houses.
+
+87- hope to come up with projected december mean price for all condos and homes to use as proxy for december 2br condos and homes
+88- hope to do the same for occupancy. 
+____________________________________________
+89- started work in "listings_12_23_Broward_Cty_Wip"
+90- made a new sheet titled "annual_price_calculations"
+91- selected all in "listings_12_23_select_columns". gave that selection a name in the name box "table1"
+92- inserted a picot table in "annual_price_calculations" sheet.
+93- tried using a pivot table to get the meian but could not work with it. 
+94- filtered "listings_12_23_select_columns" by "neighbourhood_cleansed" amd property_type "Entire condo"
+95- calculated median price for all condos in LBTS market for december on "annual_price_calcultions" sheet.
+96- filtered table1 by property type "Entire home"
+97- calculated median price for all homes in LBTS market for december. 
+98- decided to run the calculations off of copied and pasted values instead of filetered table. got very different results. glad I did. 
+99- made a new sheet called "entire_home" and a new sheet called "entire_condo"
+100- pasted appropriate tables in each from filetered versions of "listings_12_23_select_columns" sheet.
+101- in "annual_price_calculations" sheet, ran new median calcs for entire home and entire condo for LBTS december 2023
+102- NOTE: I notced nulls in price during this process. Could make a decision later to impute 0 as a value since using median? TBD. Rachalle says delete listings with nulls.
+103- deleted listings with nulls in "listings_12_23_select_columns", "entire_home", and "entire_condo"
+104- added "booked_30" and "occupancy_%" columns to "entire_home" and "entire_condo" sheets.
+105- calculated december occupancy for entire homes and entire condos for LBTS
+106- in new sheet 'occupancy' calculated average LBTS occupancy for december both property types. home: 60.40%. Condo: 77.16%
+107- renamed entire_home and entire_condo sheets "dec_entire_home" and "dec_entire_condo"
+108- created new sheet "sept_entire_home"
+109- pasted table from september workbook into "sept_entire_home"
+110- calculated median price for september entire homes in "annual_price_calculations" sheet
+111- created "sept_entire_condo" sheet.
+112- pasted table from "listings_9_23_Broward_Cty_Wip" into sept_entire_condo sheet with all bedroom values included in filter.
+113- created new sheet "mar_entire_home"
+114- created new sheet "mar_entire_condo"
+115- pasted table from march workbook into "mar_entire_home"
+116- pasted table from march workbook into "mar_entire_condo"
+117- created new sheet "jun_entire_home"
+118- created new sheet "jun_entire_condo"
+119- pasted table from June workbook into "jun_entire_home"
+120- pasted table from June workbook into "jun_entire_condo"
+121- calculated a mean of medians for the year all condos, all homes.
+122- made a 'line with markers' chart to visualize the data. December (january) is definitely peak season for price.
+123- made a table calculating the percentage increase from sept-dec and from march-dec.
+________________________________________________
+124- returned to "listings_9_23_Broward_Cty_Wip" to integrate new estimates
+125- in "listings_calculations" sheet calculated dollar value of percent increase in median prices such that the estimated december value for 2 br condos and homes reflected the % increase for all bedrooms and condos in the neighborhood. did it by calculating the increase from march and the increase from september and averaging the two results for each property type.
+126- made a new table with median price for 2br condos and 2br homes Mar-Dec (december estimated)
+127- made a new line with markers viz to see it. 
+128- performed new projected revenue calculations with new mean of median numbers.
+______________________
+129- returned to "listngs_12_23_Broward_Cty_Wip" to repeat the process of projecting december occupancy as I did for dcember median price.
+130- in "sept_entire_condo" sheet created new columns "booked_30" and "occupancy_%"
+131- repeated step 49 for sheets "sept_entire_home", "mar_entire_home", and "mar_entire_condo"
+132- in "occupancy" sheet calculated average occupancy for entire home and entire condos regardless of bedrooms for march, sept, december.
+133- calculated percent changes from march to december and sept to december for each property type.
+134- applied percent changes to original occupancy rates for Mar, sept to get estimated december occupancy for 2br condos and homes
+135- put new projected occupancy into a table with other known occupancies for mar-sept and created a line with markers to visualize. calculated new overall averages to be 62.13% occupancy for 2br condos and 39.83% for 2br homes
+__________________________
+136- returned to "listings_9_23_Broward_Cty_Wip" to update our projected annual revenue formula with our new and improved average annual occpancy rate by property type. The result is we now expect 2 br homes to generate $41,613.86 and condos to generate $31,927.44. an increase in revenue for both, but homes is now the leader for projected revenue.
+_____________________________________________
+137- created new workbook to start summarizing projected revenue and expenses in a clean environment. named it "Lauderdale_by_the_sea_rev_exp_calculations"
+138- made 5 sheets, "revenue", "expenses_2br_home_LBTS", "occupancy_price", and "expenses_2br_condo_LBTS" and "visit_one_week_per_quarter"
+139- performed a lot of reseach that is not worth detailing here on both "expenses_2br_condo_LBTS" and "expenses_2br_home_LBTS" sheets. both of these sheets are formatted almost identically. blue fields can be entered manually. research and assumptions are provided in column J. 
+140- pasted final projected revenue calculations from "listings_9_23_Broward_Cty_Wip" workbook into "Lauderdale_by_the_sea_rev_exp_calculations" workbook, sheet "revenue"
+141- copied occupancy data from "listngs_12_23_Broward_Cty_Wip" and put it in "occupancy_price" sheet.
+142- copied price data from "listings_9_23_Broward_Cty_Wip" and pasted into  "occupancy_price" sheet.
+143- made a table in "occupancy_price" sheet that would work well in PowerBI.
+144- began playing with a new model for projecting annual income in "visit_one_wk_per_quarter" that calculated income as a function of price and occupancy within each quarter. I started by assuming even distribution of client visit (1 week per quarter. That's probably not how they wanted to use the property but it was the beginning of a train of thought that I would have chased with more time. I was thinking of building a tool for the client that would allow them to choose which month they want to visit, and the interactive dash would respond by showing them changing revenue projections as a result of their choice of when to visit.) 
+
